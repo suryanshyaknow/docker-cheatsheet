@@ -1,0 +1,49 @@
+Docker Commands:
+
+- docker run nginx: 
+  To run `nginx` container.
+
+- docker run -d nginx:
+  To run `nginx` container in the background.
+
+- docker run -d -p 5000:80:
+  To run `nginx` container in the background on the port "5000". 
+  Mapping is being done here from the local system's port 5000 to docker's port 80.
+  Note: "80" is the default docker port.
+
+-d ufw <<port>>:
+  To set a default port for the system.
+
+- docker ps:
+  To see all currently running containers.
+
+- docker ps -a:
+  To see all previously ran (not yet deleted) containers.
+
+- docker stop <<container_id>>:
+  To stop the desired running container. Even the first two digits of the container id willl suffice,
+  provided that there's no other container id starting from the same two characters.
+
+- docker rm <<container_id>>:
+  To remove any desired container from the list of previously ran container accessed using `docker ps -a`,
+  provided that the container is no longer running currently.
+
+- docker rm <<container_id>> -f:
+  To remove any desired container no matter if it's running or not forcibly.
+
+- docker system prune:
+  To remove all stopped containers from the system.
+
+- docker exec -it <<container_id>> bash:
+  To get directed to any available desired container in which `bash` cmd has been run.
+
+- docker commit <<container_id>> <repo_name>:<image_tag>:
+  To commit any changes made in any desired container and apparently create a consequent image in
+  given repo name with the give tag.
+
+- docker images:
+  To see all available images.
+
+- docker run <<image_id>>:
+  To create a fresh container outta an existing image.
+
